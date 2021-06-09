@@ -1,9 +1,6 @@
 var instance_skel = require('../../instance_skel');
 var actions       = require('./actions');
 
-var debug;
-var log;
-
 class instance extends instance_skel {
 
 	constructor(system,id,config) {
@@ -45,13 +42,10 @@ class instance extends instance_skel {
 
 	destroy() {
 
-		debug("destroy", this.id);
+		this.debug("destroy", this.id);
 	}
 
 	init() {
-		debug = this.debug;
-		log = this.log;
-
 		this.init_variables()
 
 		this.status(this.STATE_OK)
